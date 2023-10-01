@@ -1,11 +1,20 @@
 package com.bloging.blogapp.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "posts")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Post {
 
     @Id
@@ -22,13 +31,22 @@ public class Post {
     @Column(name = "summary", nullable = false, length = -1)
     private String summary;
 
-    @Column(name = "author_id", nullable = false)
-    private int authorId;
+    @Column(name = "updated_at", nullable = false)
+    private Timestamp updatedAt;
 
     @Column(name = "published_at", nullable = false)
     private Timestamp publishedAt;
 
-    @Column(name = "updated_at", nullable = false)
-    private Timestamp updatedAt;
+
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,
+                        CascadeType.PERSIST,CascadeType.REFRESH})
+    @JoinColumn(name = "author_id")
+    private  User user;
+
+    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
+    private List<Comment> comments;
+
+    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
+    private List<Like> likes;
 
 }
