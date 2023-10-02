@@ -1,4 +1,4 @@
-package com.bloging.blogapp.model;
+package com.bloging.blogapp.repository;
 
 import com.bloging.blogapp.entity.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
