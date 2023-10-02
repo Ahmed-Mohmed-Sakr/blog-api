@@ -21,51 +21,13 @@ public class BlogAppApplication {
 
     /**
      * create commandLineRunner for test purpose before move to real code
-     *
      * and make sure that entities are well config
     */
-
     @Bean
     public CommandLineRunner commandLineRunner(UserRepository  userRepository , PostRepository postRepository){
         return runner -> {
-//            addSomepostesToUser(postRepository, userRepository);
-//            deletePost(postRepository);
-            deleteUser(userRepository);
         };
     }
 
-    private void deleteUser(UserRepository userRepository) {
-        userRepository.deleteById(5);
-    }
-
-    private void deletePost(PostRepository postRepository) {
-        postRepository.deleteById(4);
-    }
-
-    private void addSomepostesToUser(PostRepository postRepository, UserRepository userRepository) {
-
-        Post post = Post.builder()
-                .title("life")
-                .content("life is lopjabjndbjbnjn jdbkjjdfbd")
-                .summary("life story")
-                .publishedAt(new Timestamp(System.currentTimeMillis()))
-                .updatedAt(new Timestamp(System.currentTimeMillis()))
-                .build();
-
-        User user=
-                User.builder()
-                        .username("ali")
-                        .email("aliSakr@gmail.com")
-                        .password("kfbjbzgjnzdjb")
-                        .createdAt(new Timestamp(System.currentTimeMillis()))
-                        .updatedAt(new Timestamp(System.currentTimeMillis()))
-                        .build();
-
-        user.addPost(post);
-
-        userRepository.save(user);
-        System.out.println("user saved ");
-
-    }
 
 }
