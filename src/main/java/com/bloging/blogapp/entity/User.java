@@ -36,6 +36,9 @@ public class User implements UserDetails {
     @Column(name = "password", nullable = false, length = 255)
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @Column(name = "created_at", nullable = false)
     private Timestamp createdAt;
 
@@ -60,9 +63,6 @@ public class User implements UserDetails {
         posts.add(post);
         post.setUser(this);
     }
-
-    @Enumerated(EnumType.STRING)
-    private Role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
