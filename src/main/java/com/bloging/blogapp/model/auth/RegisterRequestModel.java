@@ -1,6 +1,5 @@
-package com.bloging.blogapp.model;
+package com.bloging.blogapp.model.auth;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterRequest {
+public class RegisterRequestModel {
     private String name;
 
     private String email;

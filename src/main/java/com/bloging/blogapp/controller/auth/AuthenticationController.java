@@ -1,8 +1,8 @@
 package com.bloging.blogapp.controller.auth;
 
-import com.bloging.blogapp.model.AuthenticationResponse;
-import com.bloging.blogapp.model.RegisterRequest;
-import com.bloging.blogapp.model.AuthenticationRequest;
+import com.bloging.blogapp.model.auth.AuthenticationResponse;
+import com.bloging.blogapp.model.auth.RegisterRequestModel;
+import com.bloging.blogapp.model.auth.AuthenticationRequest;
 import com.bloging.blogapp.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
-            @RequestBody RegisterRequest request
+            @RequestBody RegisterRequestModel request
     ) {
         return ResponseEntity.ok(authenticationService.register(request));
     }

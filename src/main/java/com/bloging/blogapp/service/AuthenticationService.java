@@ -2,9 +2,9 @@ package com.bloging.blogapp.service;
 
 import com.bloging.blogapp.entity.Role;
 import com.bloging.blogapp.entity.User;
-import com.bloging.blogapp.model.AuthenticationRequest;
-import com.bloging.blogapp.model.AuthenticationResponse;
-import com.bloging.blogapp.model.RegisterRequest;
+import com.bloging.blogapp.model.auth.AuthenticationRequest;
+import com.bloging.blogapp.model.auth.AuthenticationResponse;
+import com.bloging.blogapp.model.auth.RegisterRequestModel;
 import com.bloging.blogapp.repository.UserRepository;
 import com.bloging.blogapp.security.JwtService;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthenticationResponse register(RegisterRequest request) {
+    public AuthenticationResponse register(RegisterRequestModel request) {
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())

@@ -1,4 +1,4 @@
-package com.bloging.blogapp.model;
+package com.bloging.blogapp.model.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
