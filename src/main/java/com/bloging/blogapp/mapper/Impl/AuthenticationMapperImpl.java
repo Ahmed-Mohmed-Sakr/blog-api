@@ -1,6 +1,6 @@
 package com.bloging.blogapp.mapper.Impl;
 
-import com.bloging.blogapp.entity.Role;
+import com.bloging.blogapp.entity.myenum.Role;
 import com.bloging.blogapp.entity.User;
 import com.bloging.blogapp.mapper.AuthenticationMapper;
 import com.bloging.blogapp.model.auth.AuthenticationResponseModel;
