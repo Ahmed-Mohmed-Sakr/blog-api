@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 
 
 @ControllerAdvice
-public class BankRestExceptionHandler {
+public class BlogRestExceptionHandler {
 
     @ExceptionHandler
     public ResponseEntity<ResponseErrorModel> handleResourceNotFoundException(ResourceNotFoundException exc) {

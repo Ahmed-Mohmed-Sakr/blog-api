@@ -27,8 +27,11 @@ public class User implements UserDetails {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name = "username", nullable = false, length = 255)
-    private String name;
+    @Column(name = "first_name", nullable = false)
+    private String firstName;
+
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
 
     @Column(name = "email", nullable = false, length = 255, unique = true)
     private String email;
@@ -44,25 +47,6 @@ public class User implements UserDetails {
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updatedAt;
-
-    @OneToMany(fetch = FetchType.LAZY ,mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Post> posts;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Comment> comments;
-
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Like> likes;
-
-    public void addPost(Post post) {
-        if(posts == null){
-            posts = new ArrayList<>();
-        }
-
-        posts.add(post);
-        post.setUser(this);
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
