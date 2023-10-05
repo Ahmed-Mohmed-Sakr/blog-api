@@ -3,12 +3,9 @@ package com.bloging.blogapp.repository;
 
 import com.bloging.blogapp.entity.Post;
 import com.bloging.blogapp.entity.User;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.repository.query.Param;
 
-import java.util.List;
+
 import java.util.Optional;
 
 

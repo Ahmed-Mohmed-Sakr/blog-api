@@ -17,6 +17,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,7 +51,6 @@ public class postServiceImpl implements PostService {
     @Override
     public PostResponseModel createNewPost(PostRequestModel request) {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
-
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User Email " + email + " Not Found!"));
 
@@ -69,6 +69,7 @@ public class postServiceImpl implements PostService {
         post.setTitle(request.getTitle());
         post.setContent(request.getContent());
         post.setSummary(request.getSummary());
+        post.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
 
         return postMapper.toResponse(postRepository.save(post));
     }
