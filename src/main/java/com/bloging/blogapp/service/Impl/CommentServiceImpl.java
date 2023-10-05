@@ -30,7 +30,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List<CommentResponseModel> getAllPostComments(int postId) {
-        System.out.println("hello ------------------------");
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new ResourceNotFoundException("That Post Id " + postId + " Is Not Found!"));
 
