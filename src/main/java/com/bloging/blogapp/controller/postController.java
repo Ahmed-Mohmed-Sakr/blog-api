@@ -25,10 +25,9 @@ public class postController {
 
     @GetMapping("/{userId}")
     public List<PostResponseModel> getUserPostsById(
-            @PathVariable int userId,
-            @RequestParam(required = false,defaultValue = "0") int page
+            @PathVariable int userId
     ) {
-        return postService.getPostsByUserId(userId, page);
+        return postService.getPostsByUserId(userId);
     }
 
     @PostMapping("")

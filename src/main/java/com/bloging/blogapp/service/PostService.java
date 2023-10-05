@@ -8,7 +8,7 @@ import java.util.List;
 public interface PostService {
     List<PostResponseModel> getAllPosts(int page);
 
-    List<PostResponseModel> getPostsByUserId(int userId, int page);
+    List<PostResponseModel> getPostsByUserId(int userId);
 
     PostResponseModel createNewPost(PostRequestModel request);
 

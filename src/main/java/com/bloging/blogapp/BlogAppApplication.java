@@ -1,6 +1,6 @@
 package com.bloging.blogapp;
 
-import com.bloging.blogapp.repository.PostRepository;
+import com.bloging.blogapp.repository.PostPagingAndSortingRepository;
 import com.bloging.blogapp.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,16 +13,4 @@ public class BlogAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlogAppApplication.class, args);
     }
-
-    /**
-     * create commandLineRunner for test purpose before move to real code
-     * and make sure that entities are well config
-    */
-    @Bean
-    public CommandLineRunner commandLineRunner(UserRepository  userRepository , PostRepository postRepository){
-        return runner -> {
-        };
-    }
-
-
 }
