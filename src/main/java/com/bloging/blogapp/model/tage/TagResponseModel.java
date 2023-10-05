@@ -1,4 +1,4 @@
-package com.bloging.blogapp.model.tages;
+package com.bloging.blogapp.model.tage;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TagsResponseModel {
+public class TagResponseModel {
     private int id;
     private String name;
     private String description;

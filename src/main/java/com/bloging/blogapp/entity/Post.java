@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -68,5 +69,19 @@ public class Post {
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private List<Category> categories;
+
+    public void addTag(Tag tag){
+        if(tags == null) {
+            tags = new ArrayList<>();
+        }
+        tags.add(tag);
+    }
+
+    public void addCategory(Category category){
+        if(categories == null){
+            categories = new ArrayList<>();
+        }
+        categories.add(category);
+    }
 
 }

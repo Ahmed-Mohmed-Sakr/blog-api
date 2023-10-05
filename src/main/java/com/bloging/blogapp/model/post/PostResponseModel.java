@@ -1,6 +1,6 @@
 package com.bloging.blogapp.model.post;
 
-import com.bloging.blogapp.model.tages.TagsResponseModel;
+import com.bloging.blogapp.model.tage.TagResponseModel;
 import com.bloging.blogapp.model.user.UserResponseModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,5 +23,5 @@ public class PostResponseModel {
     private Timestamp publishedAt;
     private int LikesCount;
     private UserResponseModel Author;
-    private List<TagsResponseModel> tags;
+    private List<TagResponseModel> tags;
 }
