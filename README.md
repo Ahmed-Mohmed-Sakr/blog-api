@@ -139,18 +139,18 @@ To dockerize the Spring Boot project using the provided Dockerfile, follow these
 5. Build the Docker image using the following command:
 
    ```bash
-   docker build -t quiz-api:latest .
+   docker build -t blog-api:latest .
    ```
 
-   This command tells Docker to build an image with the tag `bank-api:latest` using the current directory (`.`) as the build context.
+   This command tells Docker to build an image with the tag `blog-api:latest` using the current directory (`.`) as the build context.
 
 6. Once the Docker build is successful, you can run the Docker container based on the built image using the following command:
 
    ```bash
-   docker run -p 8080:8080 bank-api:latest
+   docker run -p 8080:8080 blog-api:latest
    ```
 
-   This command runs a Docker container based on the `bank-api:latest` image and maps port 8080 from the container to port 8080 on the host machine, allowing you to access the Spring Boot application at `http://localhost:8080`.
+   This command runs a Docker container based on the `blog-api:latest` image and maps port 8080 from the container to port 8080 on the host machine, allowing you to access the Spring Boot application at `http://localhost:8080`.
 
 7. The Spring Boot application is now running inside the Docker container.
 
